@@ -2,8 +2,7 @@ import { con } from "./connection.js";
 
 export async function consultarTodos()
 {
-    const comando= `select id_anime  id,
-                           nm_anime nome
+    const comando= `select nm_anime
                       from tb_anime`
 
     const [linhas]= await con.query[comando]
@@ -13,11 +12,11 @@ export async function consultarTodos()
 
 export async function addAnime(nome)
 {
-    const comando= `insert into tb_anime(nome.anime)
-                    values(?)
+    const comando= `insert into tb_anime(nome)
+                            values(?)
     `
 
-    const [linhas]= await con.query[comando[nome.anime]]
+    const [linhas]= await con.query[comando[nome]]
     return linhas;
     
 }

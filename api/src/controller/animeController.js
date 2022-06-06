@@ -5,7 +5,6 @@ const server = Router();
 
 server.get('/anime', async (req, resp) => {
     try {
-        const {anime} = req.params;
         const resposta = await consultarTodos(anime);
         if(!resposta)
         {throw new Error('ocorreu um erro!')}
