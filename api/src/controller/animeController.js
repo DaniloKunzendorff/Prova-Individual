@@ -5,12 +5,8 @@ const server = Router();
 
 server.get('/anime', async (req, resp) => {
     try {
-        const resposta = await consultarTodos(anime);
-        if(!resposta)
-        {throw new Error('ocorreu um erro!')}
-        resp.status(200).send({
-            resposta
-        })
+        const resposta = await consultarTodos();
+        resp.send(resposta);
     } catch (err) {
         resp.status(400).send({
             Erro: err.message
@@ -18,16 +14,14 @@ server.get('/anime', async (req, resp) => {
     }}
 )
 
-server.post('/anime/adicionar', async (req, resp) => {
+server.post('/anime/add', async (req, resp) => {
     try {
-        const {anime} = req.body;
-        const resposta = await addAnime(anime);
+        const novoAnime = req.body;
+        const resposta = await addAnime(novoAnime);
         if(resposta == undefined){throw new Error('Insira o nome do Anime!')}
-        resp.status(200).send({
-            resposta
-        })
+        resp.status(200).send(resposta)
     } catch (err) {
-        resp.status(400).send({
+        resp.status(401).send({
             Erro: err.message
         })
     }

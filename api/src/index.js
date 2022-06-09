@@ -1,13 +1,14 @@
 import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
-import animeController from './controller/animeController.js'
+import anime from './controller/animeController.js'
 
 const server = express();
-
 server.use(cors());
 server.use(express.json());
-server.use(animeController);
+
+//Endpoits Config
+server.use(anime);
 
 
 
