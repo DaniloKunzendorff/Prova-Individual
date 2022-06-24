@@ -17,24 +17,25 @@ export default function Index() {
   
     return(
         <main className="consultar">
-            <div>
+            <h1>
                 Consultar
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {anime.map(item =>
+            </h1>
+        
+                <table>
+                    <thead>
                         <tr>
-                            <td>{item.id}</td>
-                            <td>{item.nome}</td>
-                        </tr>)}
-                </tbody>
-            </table>
+                            <th>ID</th>
+                            <th>Nome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {anime.map(item =>
+                            <tr>
+                                <td>{item.id}</td>
+                                <td>{item.nome}</td>
+                            </tr>)}
+                    </tbody>
+                </table>
             
             <a href="/">Home</a>
 

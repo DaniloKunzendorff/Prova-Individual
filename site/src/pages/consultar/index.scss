@@ -1,14 +1,41 @@
 .consultar{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
     
-   
-
-    thead{
-        background-color: blue;
+    table{
+        border-collapse: collapse;
+        
+        
     }
 
+    thead{
+        background-color: #24248b;
+        color: #FFF;
+    }
 
+    tbody{
+        background-color: rgb(180, 180, 180);
+    }
 
+    a{
+        text-decoration: none;
+        font-size: 2rem;
+        color: rgb(0, 0, 0);
+        background-color: #002d80;
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+        border-radius: 2rem;
+        align-self: center;
+    }
+
+    h1{
+        align-self: center;
+
+    }
 
 }
